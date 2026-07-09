@@ -34,6 +34,13 @@ fi
 
 WORKTREE_NAME=$(basename "$GIT_DIR_ABS")
 echo "${LOGGER} Worktree name: $WORKTREE_NAME"
+# ── Detect rebase in progress ─────────────────────────────────────────────────
+if [[ "${GIT_REFLOG_ACTION:-}" == rebase* ]] \
+    || [ -d "${GIT_DIR_ABS}/rebase-merge" ] \
+    || [ -d "${GIT_DIR_ABS}/rebase-apply" ]; then
+    echo "${LOGGER} Rebase in progress — skipping."
+    exit 0
+fi
 
 # ── Step 1: Fix .git/worktrees/<name>/gitdir ──────────────────────────────────
 GITDIR_FILE="$GIT_COMMON_DIR/worktrees/$WORKTREE_NAME/gitdir"
