@@ -8,7 +8,7 @@
 
 ## Git hooks
 
-To enable the hooks in [githooks], run the following command from <repo-root>:
+To enable the hooks in [githooks], run the following command from `<repo-root>`:
 
 ```bash
 git config core.hooksPath ./githooks
