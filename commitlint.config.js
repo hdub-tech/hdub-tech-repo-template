@@ -19,7 +19,7 @@ const Configuration = {
    */
   rules: {
     "body-max-line-length": [2, "always", 80],
-    "body-max-length": [2, "always", 500],
+    "body-max-length": [2, "always", 1000],
     "type-enum": [2,  //Error
       "always",
       [
