@@ -1,0 +1,83 @@
+<!-- UNCOMMENT OR DELETE
+> [!CAUTION]
+> _BREAKING CHANGES INTRODUCED!_
+> _ONE_LINE_SUMMARY_HERE_
+-->
+
+<!-- Uncomment if accurate. No penalties for using AIi - just not crediting it.
+This PR was Co-Authored-By: Claude MODEL VERSION <noreply@anthropic.com>
+-->
+## Summary
+
+- Closes #GITHUB_ISSUE_ID
+- DOES_A_THING
+
+<details><summary><i>Additional Context</i></summary>
+<!-- Design decisions, rationale, known limitations. Delete if not needed. -->
+INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
+</details>
+
+### Imapact & Key Changes
+<!-- Bulleted list of key files modified and the specific logic added/altered.
+Include why if not covered in the linked ticket. This does not need to be fully
+fleshed out - that is what Files Changed is for. This is just a quick glance of
+what to expect there. -->
+
+- FILE ADDED_OR_MODIFIED to DO_A_THING (CONCISE_REASON_IF_NOT_COVERED_ALREADY)
+
+### Secondary improvements
+<!-- For any unrelated tech debt, style fixes, or small refactors made while
+working on the main task. Delete if unused. -->
+
+- STYLE_FIX
+- REFACTORED_CODE
+- TECH_DEBT_ELIMINATED
+
+## Verification / Testing
+
+<!-- If any of the checkboxes below do not apply, MOVE them into the following
+details box to show that you considered it and ruled it out. -->
+<details><summary><i>N/A items</i></summary>
+
+</details>
+
+- [ ] Code follows standards outlinted in CONTRIBUTING.md
+- [ ] `pre-commit` and `commit-msg` hooks passed locally
+- [ ] AI-attribution footers required, when used (e.g., `Co-Authored-By: Claude MODEL VERSION <EMAIL>` <!-- markdownlint-disable-line MD013 -->
+      added to commits/PRs)
+- [ ] Unit or integration tests added if appropriate, and pass
+
+    <details><summary>Evidence</summary>
+    PASTE_EVIDENCE
+    </details>
+
+<!-- Copy/paste the following templates as many times as needed -->
+- [ ] TEST_NEW_CHANGE_MANUALLY_IF_NECESSARY
+    <details>
+
+    DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
+
+    </details>
+
+- [ ] TEST_NEW_CHANGE_IS_IDEMPOTENT
+    <!-- Idempotent means no errors or unexpected behavior if your change is
+    tested back to back times. Preference on it still being a good user
+    experience. -->
+    <details>
+
+    DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
+
+    </details>
+
+- [ ] TEST_SECONDARY_CHANGES
+    <details>
+
+    DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
+
+    </details>
+
+## Documentation
+<!-- Delete unnecessary items -->
+- [ ] Created DOC.md
+- [ ] Updated DOC.md
+- [ ] No documentation updates required
