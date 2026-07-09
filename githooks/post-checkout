@@ -21,19 +21,14 @@ WORKTREE_DIR=$(abs_dir "$(git rev-parse --show-toplevel)")
 GIT_COMMON_DIR=$(abs_dir "$(git rev-parse --git-common-dir)")
 GIT_DIR_ABS=$(abs_dir "$(git rev-parse --git-dir)")
 MAIN_REPO_ROOT=$(dirname "$GIT_COMMON_DIR")
+WORKTREE_NAME=$(basename "$GIT_DIR_ABS")
 
-echo "${LOGGER} Worktree dir:             $WORKTREE_DIR"
-echo "${LOGGER} Main repo root:           $MAIN_REPO_ROOT"
-echo "${LOGGER} Git common dir:           $GIT_COMMON_DIR"
-echo "${LOGGER} Git dir (this worktree):  $GIT_DIR_ABS"
-
+# ── Detect main worktree ──────────────────────────────────────────────────────
 if [ "$GIT_DIR_ABS" = "$GIT_COMMON_DIR" ]; then
     echo "${LOGGER} In main worktree — skipping worktree-specific fixups."
     exit 0
 fi
 
-WORKTREE_NAME=$(basename "$GIT_DIR_ABS")
-echo "${LOGGER} Worktree name: $WORKTREE_NAME"
 # ── Detect rebase in progress ─────────────────────────────────────────────────
 if [[ "${GIT_REFLOG_ACTION:-}" == rebase* ]] \
     || [ -d "${GIT_DIR_ABS}/rebase-merge" ] \
@@ -41,6 +36,13 @@ if [[ "${GIT_REFLOG_ACTION:-}" == rebase* ]] \
     echo "${LOGGER} Rebase in progress — skipping."
     exit 0
 fi
+
+# ── Output key paths ──────────────────────────────────────────────────────────
+echo "${LOGGER} Worktree dir:             $WORKTREE_DIR"
+echo "${LOGGER} Main repo root:           $MAIN_REPO_ROOT"
+echo "${LOGGER} Git common dir:           $GIT_COMMON_DIR"
+echo "${LOGGER} Git dir (this worktree):  $GIT_DIR_ABS"
+echo "${LOGGER} Worktree name:            $WORKTREE_NAME"
 
 # ── Step 1: Fix .git/worktrees/<name>/gitdir ──────────────────────────────────
 GITDIR_FILE="$GIT_COMMON_DIR/worktrees/$WORKTREE_NAME/gitdir"
