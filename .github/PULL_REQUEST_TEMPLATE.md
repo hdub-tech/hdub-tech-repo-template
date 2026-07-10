@@ -1,7 +1,8 @@
+<!-- markdownlint-disable-file MD013 -->
 <!-- UNCOMMENT OR DELETE
 > [!CAUTION]
 > _BREAKING CHANGES INTRODUCED!_
-> _ONE_LINE_SUMMARY_HERE_
+> <i>ONE_LINE_SUMMARY_HERE</i>
 -->
 
 <!-- Uncomment if accurate. No penalties for using AIi - just not crediting it.
@@ -18,16 +19,12 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 </details>
 
 ### Imapact & Key Changes
-<!-- Bulleted list of key files modified and the specific logic added/altered.
-Include why if not covered in the linked ticket. This does not need to be fully
-fleshed out - that is what Files Changed is for. This is just a quick glance of
-what to expect there. -->
+<!-- Bulleted list of key files modified and the specific logic added/altered. Include why if not covered in the linked ticket. This does not need to be fully fleshed out - that is what Files Changed is for. This is just a quick glance of what to expect there. -->
 
 - FILE ADDED_OR_MODIFIED to DO_A_THING (CONCISE_REASON_IF_NOT_COVERED_ALREADY)
 
 ### Secondary improvements
-<!-- For any unrelated tech debt, style fixes, or small refactors made while
-working on the main task. Delete if unused. -->
+<!-- For any unrelated tech debt, style fixes, or small refactors made while working on the main task. Delete if unused. -->
 
 - STYLE_FIX
 - REFACTORED_CODE
@@ -35,16 +32,14 @@ working on the main task. Delete if unused. -->
 
 ## Verification / Testing
 
-<!-- If any of the checkboxes below do not apply, MOVE them into the following
-details box to show that you considered it and ruled it out. -->
-<details><summary><i>N/A items</i></summary>
+<!-- If any of the checkboxes below do not apply, MOVE them into the following details box to show that you considered it and ruled it out. -->
+<details><summary><i>==== N/A items ====</i></summary>
 
-</details>
+</details>><i>==== End N/A items ====</i>
 
 - [ ] Code follows standards outlinted in CONTRIBUTING.md
 - [ ] `pre-commit` and `commit-msg` hooks passed locally
-- [ ] AI-attribution footers required, when used (e.g., `Co-Authored-By: Claude MODEL VERSION <EMAIL>` <!-- markdownlint-disable-line MD013 -->
-      added to commits/PRs)
+- [ ] AI-attribution footers required, when used (e.g., `Co-Authored-By: Claude MODEL VERSION <EMAIL>` added to commits/PRs)
 - [ ] Unit or integration tests added if appropriate, and pass
 
     <details><summary>Evidence</summary>
@@ -60,9 +55,7 @@ details box to show that you considered it and ruled it out. -->
     </details>
 
 - [ ] TEST_NEW_CHANGE_IS_IDEMPOTENT
-    <!-- Idempotent means no errors or unexpected behavior if your change is
-    tested back to back times. Preference on it still being a good user
-    experience. -->
+    <!-- Idempotent means no errors or unexpected behavior if your change is tested back to back times. Preference on it still being a good user experience. -->
     <details>
 
     DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
