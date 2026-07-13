@@ -6,7 +6,8 @@
 -->
 
 <!-- Uncomment if accurate. No penalties for using AIi - just not crediting it.
-This PR was Co-Authored-By: Claude MODEL VERSION <noreply@anthropic.com>
+PR Co-Authored-By: Claude MODEL VERSION <noreply@anthropic.com>
+Refined by @git-user
 -->
 ## Summary
 
@@ -19,7 +20,7 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 </details>
 
 ### Imapact & Key Changes
-<!-- Bulleted list of key files modified and the specific logic added/altered. Include why if not covered in the linked ticket. This does not need to be fully fleshed out - that is what Files Changed is for. This is just a quick glance of what to expect there. -->
+<!-- Bulleted list of key files modified and the specific logic added/altered. Include why if not covered in the linked ticket. Be concise - Files Changed is source of truth. -->
 
 - FILE ADDED_OR_MODIFIED to DO_A_THING (CONCISE_REASON_IF_NOT_COVERED_ALREADY)
 
@@ -70,7 +71,7 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
     </details>
 
 ## Documentation
-<!-- Delete unnecessary items -->
+<!-- Delete unnecessary items. One item per <DOC>.md -->
 - [ ] Created DOC.md
 - [ ] Updated DOC.md
 - [ ] No documentation updates required
