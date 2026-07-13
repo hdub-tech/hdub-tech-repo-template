@@ -7,7 +7,7 @@ set -euo pipefail
 
 LOGGER="[commit-msg hook]:"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-COMMITLINT_CONFIG="commitlint.config.js"
+COMMITLINT_CONFIG="commitlint.config.mjs"
 # Pinned for supply-chain safety and reproducibility.
 COMMITLINT_VERSION="21.0.2"
 LINT_RULES="${REPO_ROOT}/${COMMITLINT_CONFIG}"
