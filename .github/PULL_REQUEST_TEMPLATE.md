@@ -5,7 +5,7 @@
 > <i>ONE_LINE_SUMMARY_HERE</i>
 -->
 
-<!-- Uncomment if accurate. No penalties for using AIi - just not crediting it.
+<!-- Uncomment if accurate. No penalties for using AI - just not crediting it.
 PR Co-Authored-By: Claude MODEL VERSION <noreply@anthropic.com>
 Refined by @git-user
 -->
@@ -19,7 +19,7 @@ Refined by @git-user
 INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 </details>
 
-### Imapact & Key Changes
+### Impact & Key Changes
 <!-- Bulleted list of key files modified and the specific logic added/altered. Include why if not covered in the linked ticket. Be concise - Files Changed is source of truth. -->
 
 - FILE ADDED_OR_MODIFIED to DO_A_THING (CONCISE_REASON_IF_NOT_COVERED_ALREADY)
@@ -36,9 +36,9 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 <!-- If any of the checkboxes below do not apply, MOVE them into the following details box to show that you considered it and ruled it out. -->
 <details><summary><i>==== N/A items ====</i></summary>
 
-</details>><i>==== End N/A items ====</i>
+</details><i>==== End N/A items ====</i>
 
-- [ ] Code follows standards outlinted in CONTRIBUTING.md
+- [ ] Code follows standards outlined in CONTRIBUTING.md
 - [ ] `pre-commit` and `commit-msg` hooks passed locally
 - [ ] AI-attribution footers required, when used (e.g., `Co-Authored-By: Claude MODEL VERSION <EMAIL>` added to commits/PRs)
 - [ ] Unit or integration tests added if appropriate, and pass

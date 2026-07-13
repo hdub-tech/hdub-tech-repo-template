@@ -46,7 +46,7 @@ const Configuration = {
         "common",
         "githooks",
         "markdownlint",
-	"pr-template",
+        "pr-template",
         "shellcheck"
       ]
     ],

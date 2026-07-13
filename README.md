@@ -17,7 +17,7 @@ git config core.hooksPath ./githooks
 <details><summary><i>Hooks breakdown</i></summary>
 
 - `post-checkout` hook:
-  - `<repo-root>/,git/worktrees/<worktree-name>/gitdir` and
+  - `<repo-root>/.git/worktrees/<worktree-name>/gitdir` and
     `<worktree-dir>/.git` are updated to use relative paths. This helps when the
     repo might be on a shared drive attached to a VM
   - `<worktree-dir>/.claude/memory` will be aliased to

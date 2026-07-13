@@ -9,6 +9,14 @@ set -euo pipefail
 LOGGER="[post-checkout]:"
 PREV_HEAD="${1:-}"
 
+# Fail fast if GNU realpath isn't available so users get a clear message
+# instead of confusing option-parsing errors deeper in the script.
+if ! realpath --relative-to=. . >/dev/null 2>&1; then
+    echo >&2 "${LOGGER} ERROR: GNU realpath required (needs --relative-to and --no-symlinks)."
+    echo >&2 "${LOGGER}        On macOS/BSD: 'brew install coreutils' and ensure GNU realpath is on PATH."
+    exit 1
+fi
+
 # Resolve a (possibly relative) path to its absolute directory path
 abs_dir() { (cd "$1" || exit 1; pwd); }
 
