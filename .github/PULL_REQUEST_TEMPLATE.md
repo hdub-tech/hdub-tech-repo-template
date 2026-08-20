@@ -5,7 +5,7 @@
 > <i>ONE_LINE_SUMMARY_HERE</i>
 -->
 
-<!-- Uncomment if accurate. No penalties for using AI - just not crediting it.
+<!-- Uncomment if accurate, else DELETE. No penalties for using AI - just not crediting it. This is about the creation of the body/description of the PR -- not about commits within.
 PR Co-Authored-By: Claude MODEL VERSION <noreply@anthropic.com>
 Refined by @git-user
 -->
@@ -25,7 +25,7 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 - FILE ADDED_OR_MODIFIED to DO_A_THING (CONCISE_REASON_IF_NOT_COVERED_ALREADY)
 
 ### Secondary improvements
-<!-- For any unrelated tech debt, style fixes, or small refactors made while working on the main task. Delete if unused. -->
+<!-- For any [un]related tech debt, style fixes, or small refactors made while working on the main task. Delete if unused. -->
 
 - STYLE_FIX
 - REFACTORED_CODE
@@ -70,6 +70,13 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 
     </details>
 
+- [ ] REGRESSION_TEST
+    <details>
+
+    DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
+
+    </details>
+    
 ## Documentation
 <!-- Delete unnecessary items. One item per <DOC>.md -->
 - [ ] Created DOC.md

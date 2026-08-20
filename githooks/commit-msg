@@ -36,5 +36,5 @@ if [ -e "${LINT_RULES}" ]; then
   }
 else
   echo "${LOGGER} Config ${LINT_RULES} doesn't exist... skipping commitlint"
-  exit 0
+  exit 1
 fi
