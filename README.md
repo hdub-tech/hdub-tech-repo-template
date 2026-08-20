@@ -20,8 +20,8 @@ git config core.hooksPath ./githooks
   - `<repo-root>/.git/worktrees/<worktree-name>/gitdir` and
     `<worktree-dir>/.git` are updated to use relative paths. This helps when the
     repo might be on a shared drive attached to a VM
-  - `<worktree-dir>/.claude/memory` will be aliased to
-    `<repo-root>/.claude/memory`, if it exists.
+  - `<worktree-dir>/.claude` will be sym linked to `<repo-root>/.claude`, if
+    it exists.
 
 </details>
 
