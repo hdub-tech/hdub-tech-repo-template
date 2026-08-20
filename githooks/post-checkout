@@ -62,17 +62,28 @@ if [ ! -f "$WORKTREE_GIT_FILE" ]; then
     exit 1
 fi
 
-CURRENT_CONTENT=$(<"$WORKTREE_GIT_FILE")
-CURRENT_PATH="${CURRENT_CONTENT#gitdir: }"
-if [[ "$CURRENT_PATH" == ..* ]]; then
-    echo "${LOGGER}   Already relative ($CURRENT_CONTENT) — no change needed."
+CURRENT_CONTENT=$(<"${WORKTREE_GIT_FILE}")
+GITDIR_PREFIX="gitdir: "
+if [[ "${CURRENT_CONTENT}" != "${GITDIR_PREFIX}"* ]]; then
+    echo >&2 "${LOGGER}   ERROR: ${WORKTREE_GIT_FILE} is malformed (missing '${GITDIR_PREFIX}' prefix)"
+    echo >&2 "${LOGGER}   Contents: ${CURRENT_CONTENT}"
+    exit 1
+fi
+
+if [[ "${CURRENT_CONTENT}" == "${GITDIR_PREFIX}.."* ]]; then
+    echo "${LOGGER}   Already relative (${CURRENT_CONTENT}) — no change needed."
 else
-    REL_PATH=$(rel_path "$WORKTREE_DIR" "$GIT_DIR_ABS")
-    NEW_CONTENT="gitdir: $REL_PATH"
+    REL_PATH=$(rel_path "${WORKTREE_DIR}" "${GIT_DIR_ABS}")
+    NEW_CONTENT="${GITDIR_PREFIX}${REL_PATH}"
     echo "${LOGGER}   Updating:"
-    echo "${LOGGER}     was: $CURRENT_CONTENT"
-    echo "${LOGGER}     now: $NEW_CONTENT"
-    printf '%s\n' "$NEW_CONTENT" > "$WORKTREE_GIT_FILE"
+    echo "${LOGGER}     was: ${CURRENT_CONTENT}"
+    echo "${LOGGER}     now: ${NEW_CONTENT}"
+    # Atomic replace: write to same-directory temp file, then rename.
+    TMP_FILE=$(mktemp "${WORKTREE_GIT_FILE}.XXXXXX")
+    trap 'rm -f "${TMP_FILE}"' EXIT
+    printf '%s\n' "${NEW_CONTENT}" > "${TMP_FILE}"
+    mv "${TMP_FILE}" "${WORKTREE_GIT_FILE}"
+    trap - EXIT
     echo "${LOGGER}   Done."
 fi
 
