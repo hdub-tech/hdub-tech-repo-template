@@ -31,7 +31,6 @@ WORKTREE_DIR=$(abs_dir "$(git rev-parse --show-toplevel)")
 GIT_COMMON_DIR=$(abs_dir "$(git rev-parse --git-common-dir)")
 GIT_DIR_ABS=$(abs_dir "$(git rev-parse --git-dir)")
 MAIN_REPO_ROOT=$(dirname "$GIT_COMMON_DIR")
-WORKTREE_NAME=$(basename "$GIT_DIR_ABS")
 
 # ── Detect main worktree ──────────────────────────────────────────────────────
 if [ "$GIT_DIR_ABS" = "$GIT_COMMON_DIR" ]; then
@@ -40,8 +39,8 @@ if [ "$GIT_DIR_ABS" = "$GIT_COMMON_DIR" ]; then
 fi
 
 # ── Detect new worktree checkout ──────────────────────────────────────────────
-NULL_SHA="0000000000000000000000000000000000000000"
-if [ "$PREV_HEAD" != "$NULL_SHA" ]; then
+# If PREV_HEAD is all zeroes, this is new (gaurds for sha-1 and sha-256 hashes)
+if [[ ! "$PREV_HEAD" =~ ^0+$ ]]; then
     echo "${LOGGER} Not a new worktree checkout — skipping."
     exit 0
 fi
@@ -51,7 +50,6 @@ echo "${LOGGER} Worktree dir:             $WORKTREE_DIR"
 echo "${LOGGER} Main repo root:           $MAIN_REPO_ROOT"
 echo "${LOGGER} Git common dir:           $GIT_COMMON_DIR"
 echo "${LOGGER} Git dir (this worktree):  $GIT_DIR_ABS"
-echo "${LOGGER} Worktree name:            $WORKTREE_NAME"
 
 # ── Fix <worktree>/.git ──────────────────────────────────────────────────────
 WORKTREE_GIT_FILE="$WORKTREE_DIR/.git"

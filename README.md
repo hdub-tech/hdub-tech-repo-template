@@ -1,12 +1,12 @@
 # hdub-tech-repo-template
 
-# First time set-up
+## First time set-up
 
-## Requirements
+### Requirements
 
-1. [podman] or [npx] (if using linter hook).
+1. [podman], [docker] or [npx] (if using linter hook).
 
-## Git hooks
+### Git hooks
 
 To enable the hooks in [githooks], run the following command from `<repo-root>`:
 
@@ -17,15 +17,30 @@ git config core.hooksPath ./githooks
 <details><summary><i>Hooks breakdown</i></summary>
 
 - `post-checkout` hook:
-  - `<repo-root>/.git/worktrees/<worktree-name>/gitdir` and
-    `<worktree-dir>/.git` are updated to use relative paths. This helps when the
+  - `<worktree-dir>/.git` is updated to use a relative path. This helps when the
     repo might be on a shared drive attached to a VM
   - `<worktree-dir>/.claude` will be sym linked to `<repo-root>/.claude`, if
     it exists.
+- `commit-msg` hook: lints the message against [commitlint-config] using a
+  pinned commitlint — podman or docker if available, else npx.
 
 </details>
 
+### Linting
+
+Markdown is linted against [markdownlint-config]. Run from `<repo-root>`:
+
+```bash
+podman run --rm -v .:/workdir:z,ro docker.io/davidanson/markdownlint-cli2:v0.22.1
+```
+
+> [!NOTE]
+> _Drop `,ro` if using `markdownlint --fix`, so the volume is writeable._
+
 <!-- Links -->
-[githooks]: ./githooks
+[commitlint-config]:   ./commitlint.config.mjs
+[githooks]:            ./githooks
+[markdownlint-config]: ./.markdownlint.yaml
+[docker]:   https://www.docker.com/get-started/
 [npx]:      https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/
 [podman]:   https://podman.io/docs/installation

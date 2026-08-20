@@ -39,7 +39,7 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
 </details><i>==== End N/A items ====</i>
 
 - [ ] Code follows standards outlined in CONTRIBUTING.md
-- [ ] `pre-commit` and `commit-msg` hooks passed locally
+- [ ] `commit-msg` hook passed locally
 - [ ] AI-attribution footers required, when used (e.g., `Co-Authored-By: Claude MODEL VERSION <EMAIL>` added to commits/PRs)
 - [ ] Unit or integration tests added if appropriate, and pass
 
@@ -76,7 +76,7 @@ INCLUDE_ADDITIONAL_CONTEXT_HERE_IF_NOT_IN_LINKED_TICKETS
     DESCRIBE_TEST_STEPS_AND_OR_ADD_SCREENSHOT
 
     </details>
-    
+
 ## Documentation
 <!-- Delete unnecessary items. One item per <DOC>.md -->
 - [ ] Created DOC.md
