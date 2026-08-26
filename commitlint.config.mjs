@@ -44,8 +44,10 @@ const Configuration = {
         "claude-ai",
         "commitlint",
         "common",
+        "eslint",
         "githooks",
         "markdownlint",
+        "node",
         "pr-template",
         "shellcheck"
       ]

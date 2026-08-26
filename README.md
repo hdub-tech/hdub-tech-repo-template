@@ -28,6 +28,8 @@ git config core.hooksPath ./githooks
 
 ### Linting
 
+#### Markdown
+
 Markdown is linted against [markdownlint-config]. Run from `<repo-root>`:
 
 ```bash
@@ -36,6 +38,21 @@ podman run --rm -v .:/workdir:z,ro docker.io/davidanson/markdownlint-cli2:v0.22.
 
 > [!NOTE]
 > _Drop `,ro` if using `markdownlint --fix`, so the volume is writeable._
+
+#### Node (ESLint)
+
+First time set-up:
+
+```bash
+nvm use
+npm install
+```
+
+General use:
+
+```bash
+npx eslint FILE_OR_DIR
+```
 
 <!-- Links -->
 [commitlint-config]:   ./commitlint.config.mjs
